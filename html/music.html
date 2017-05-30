@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HTML5 Music Player</title>
+	<link rel="stylesheet" href="../css/music.css">
+</head>
+<body>
+	<div class="music">
+		<div class="bacImg"></div>
+		<div class="mask"></div>
+		<div class="music-name music-info"><span></span></div>
+		<div class="music-author music-info">— <span></span> —</div>
+		<div class="music-img">
+			<img class="img-author" src="">
+		</div>
+		<div class="music-lyric">
+			<div class="music-data">
+				<p data-value="" data-time=""></p>
+			</div>
+		</div>
+		<div class="music-progress">
+			<p class="current-time time">00:00</p>
+			<p class="progress"><span class="current-progress"><i class="progress-dot icon-img"></i></span></p>
+			<p class="all-time time">00:00</p>
+		</div>
+		<div class="music-controls">
+			<a href="javascript:;" id="btnMode" class="ctl-mode-list icon-img" data-value="列表循环" title="列表循环"><span></span></a>
+			<a href="javascript:;" class="prevNext ctl-prev icon-img" data-value="prev" title="上一首"><span></span></a>
+			<a href="javascript:;" id="btnPlay" class="ctl-play icon-img" data-value="play" title="播放"><span></span></a>
+			<a href="javascript:;" class="prevNext ctl-next icon-img" data-value="next" title="下一首"><span></span></a>
+			<a href="javascript:;" class="ctl-list icon-img" data-value="list" title="歌曲列表"><span></span></a>
+		</div>
+		<audio id="music-audio" src=""></audio>
+		<div class="list-mask"></div>
+		<div class="music-list" id="musicList">
+			<ul>
+				<li class="list-item" data-index="0">
+					<p class="singer"><span>夜的第七章</span><span class="singer-name"> - 周杰伦</span></p>
+				</li>
+				<li class="list-item" data-index="1">
+					<p class="singer"><span>贝加尔湖畔</span><span class="singer-name"> - 李健</span></p>
+				</li>
+				<li class="list-item" data-index="2">
+					<p class="singer"><span>斯德哥尔摩</span><span class="singer-name">情人 - 陈奕迅</span></p>
+				</li>
+				<li class="list-item" data-index="2">
+					<p class="singer"><span>曾经的你 </span><span class="singer-name">- 许巍</span></p>
+				</li>
+				<li class="list-item" data-index="0">
+					<p class="singer"><span>夜的第七章</span><span class="singer-name"> - 周杰伦</span></p>
+				</li>
+				<li class="list-item" data-index="1">
+					<p class="singer"><span>贝加尔湖畔</span><span class="singer-name"> - 李健</span></p>
+				</li>
+				<li class="list-item" data-index="2">
+					<p class="singer"><span>斯德哥尔摩</span><span class="singer-name">情人 - 陈奕迅</span></p>
+				</li>
+				<li class="list-item" data-index="2">
+					<p class="singer"><span>曾经的你 </span><span class="singer-name">- 许巍</span></p>
+				</li>
+				<li class="list-item" data-index="0">
+					<p class="singer"><span>夜的第七章</span><span class="singer-name"> - 周杰伦</span></p>
+				</li>
+				<li class="list-item" data-index="1">
+					<p class="singer"><span>贝加尔湖畔</span><span class="singer-name"> - 李健</span></p>
+				</li>
+				<li class="list-item" data-index="2">
+					<p class="singer"><span>斯德哥尔摩</span><span class="singer-name">情人 - 陈奕迅</span></p>
+				</li>
+				<li class="list-item" data-index="2">
+					<p class="singer"><span>曾经的你 </span><span class="singer-name">- 许巍</span></p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script src="../lib/jquery.min.js"></script>
+	<script src="../lib/require.min.js"></script>
+	<script src="../js/music.js"></script>
+</body>
+</html>
