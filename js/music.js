@@ -28,7 +28,7 @@ require([
 
 		// 播放上一首/下一首音乐
 		$next.click(function () {
-			play.playNewMusic($(this).data('value'), $mode.data('value'));
+			play.playNewMusic($(this).data('value'), $mode.data('value'), true);
 		});
 
 		// 播放/暂停

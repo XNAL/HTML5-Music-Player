@@ -128,8 +128,10 @@ define([
         },
 
         // 播放新的音乐
-        this.playNewMusic = function (prevNext, playMode) {
+        this.playNewMusic = function (prevNext, playMode, isSwitch) {
             this.setMusicTime($('.current-time'), 0);
+            // 手动点击上一曲/下一曲，且当前模式为【单曲循环】时，则按照列表循环的模式来处理
+            playMode = isSwitch === true && playMode === '单曲循环' ? '列表循环' : playMode;
             switch (playMode) {
                 case '列表循环':                
                     if (prevNext === 'next') {
@@ -194,6 +196,7 @@ define([
             this.audio.src = newMusic.url;
             this.audio.load();
             this.playMusic('play');
+            this.audio.loop = false;
             // 为audio动态的更改音频路径，播放不同的音频时
             // 点击的时候，音频没有加载（虽然已经开始播放），获取不到时长，audio.duration为nan
             // 添加事件监听，当准备好音频时再获取时长

@@ -85,6 +85,12 @@ module.exports = function (grunt) {
                 cwd: 'images/',
                 src: '*',
                 dest: 'build/images'
+            },
+            music: {
+                expand: true,
+                cwd: 'music/',
+                src: '*',
+                dest: 'build/music'
             }
         }
 
