@@ -145,7 +145,10 @@ define([
                     this.audio.loop = true;
                     break;
                 case '随机播放':
-                    this.playIndex = Math.round(Math.random() * (this.musicList.length - 1));
+                    var randIndex = Math.round(Math.random() * (this.musicList.length - 1));
+                    // 随机生成的索引等于当前索引时则索引为0（如果当前索引正好也为0，则索引为length - 1）
+                    randIndex = this.playIndex === randIndex ? (this.playIndex === 0 ? this.musicList.length - 1 : 0) : randIndex;
+                    this.playIndex = randIndex;
                     break;
             }
             this.playMusicByIndex(this.playIndex);
