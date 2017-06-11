@@ -231,6 +231,10 @@ body {
             line-height: 40px;
             border-bottom: 1px solid #eee;
             box-sizing: border-box;
+            
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 
@@ -242,6 +246,13 @@ body {
         .singer-name {            
             font-size: 12px;
             color: #999;
+        }
+    }
+    li.play-on {
+        color: red;
+
+        .singer-name {         
+            color: red;
         }
     }
 
