@@ -15,7 +15,7 @@ require([
 
 		var	play = new player.MusicPlayer($audio, $play, $curProgress, $musicList);
 		play.init();
-		
+
 		// 监听到音乐播放完毕后播放下一首音乐
 		$audio.addEventListener("ended", function(){
 			play.playNewMusic('next', $mode.data('value'));
@@ -35,8 +35,6 @@ require([
 		$play.click(function () {
 			var value = $(this).data('value');
 			play.playMusic(value);
-			$(this).data('value', value === 'play' ? 'pause' : 'play');
-			$(this).attr('title', value === 'play' ? '暂停' : '播放');
 		});
 
 		// 调整音乐播放进度
@@ -71,5 +69,3 @@ require([
 		})
 	})();
 });
-
-
