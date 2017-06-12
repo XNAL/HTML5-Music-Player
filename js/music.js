@@ -52,13 +52,15 @@ require([
 			} else {
 				height = liCount * 40
 			}
-			$musicList.css('height', height + 'px');
+			$musicList.css('height', height + 'px')
+					  .css('border', '1px solid #42474c');
 			$listMask.css('display', 'block');
 		})
 
 		// 点击隐藏音乐列表
 		$listMask.click(function() {
-			$musicList.css('height', '0px');
+			$musicList.css('height', '0px')
+					  .css('border', 'none');
 			$(this).css('display', 'none');
 		})
 

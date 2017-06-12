@@ -11,10 +11,9 @@ body {
 }
 
 .music {
-    position: relative;
-    height: 500px;
-    width: 300px;
-    margin: 100px auto;
+    position: absolute;
+    height: 100%;
+    width: 100%;
     background-color: #42474c;
     overflow: hidden;
 }
@@ -25,8 +24,8 @@ body {
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: cover;
-    -webkit-filter: blur(30px);
-            filter: blur(30px);
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
     opacity: .8;
 }
 .mask {
@@ -44,24 +43,22 @@ body {
 }
 
 .music-name {
-    top: 4%;
+    top: 6%;
 }
 
 .music-author {
     font-size: 13px;
-    top: 10%;
+    top: 12%;
 }
 
 .music-img {
     position: absolute;
-    top: 15%;
+    top: 20%;
     width: 100%;
     .img-author {
         position: absolute;
-        top: 20px;
-        left: 30px;
-        width: 240px;
-        height: 240px;
+        left: 10%;
+        width: calc(80%);
         border: 6px solid rgba(55, 55, 55, .2);
         border-radius: 50%;
         box-sizing: border-box;
@@ -87,15 +84,6 @@ body {
     animation-play-state: paused;
 }
 
-.music-lyric {
-    position: absolute;
-    height: 20px;
-    width: 100%;
-    overflow: hidden;
-    top: 350px;
-    text-align: center;
-}
-
 .music-data {
     transform: translate3d(0px, 0px, 0px);
     p {
@@ -107,6 +95,7 @@ body {
 .music-progress {
     position: absolute;
     bottom: 20%;
+    width: 100%;
     p {
         float: left;
     }
@@ -119,8 +108,8 @@ body {
     }
     .progress {
         position: relative;
-        margin-top: 8px;
-        width: 180px;
+        margin: 8px 0;
+        width: calc(100% - 120px);
         height: 2px;
         background-color: #bbb;
         &:hover {
@@ -157,10 +146,11 @@ body {
 .music-controls {
     position: absolute;
     bottom: 12%;
+    width: 100%;
 
     .ctl-mode-list {
         top: 2px;
-        left: 20px;
+        left: 6.7%;
         width: 26px;
         height: 25px;
         background-position: 0 -205px;
@@ -177,14 +167,14 @@ body {
     }
     .ctl-prev {
         top: 4px;
-        left: 80px;
+        left: 28.8%;
         width: 19px;
         height: 20px;
         background-position: 0 -30px;
     }
     .ctl-play {
         top: 0;
-        left: 140px;
+        left: 46.9%;
         width: 21px;
         height: 29px;
         background-position: 0 0;
@@ -194,14 +184,14 @@ body {
     }
     .ctl-next {
         top: 4px;
-        left: 200px;
+        left: 67%;
         width: 19px;
         height: 20px;
         background-position: 0 -52px;
     }
     .ctl-list {
         top: 2px;
-        left: 260px;
+        left: 87%;
         width: 23px;
         height: 20px;
         background-position: 0 -260px;
@@ -218,7 +208,6 @@ body {
     overflow: auto;
     height: 0;
     z-index: 999;
-    border: 1px solid #42474c;
 
     ul {
         list-style: none;
@@ -231,7 +220,7 @@ body {
             line-height: 40px;
             border-bottom: 1px solid #eee;
             box-sizing: border-box;
-            
+
             &:hover {
                 cursor: pointer;
             }
@@ -243,7 +232,7 @@ body {
             padding-left: 10px;
         }
 
-        .singer-name {            
+        .singer-name {
             font-size: 12px;
             color: #999;
         }
@@ -251,7 +240,7 @@ body {
     li.play-on {
         color: red;
 
-        .singer-name {         
+        .singer-name {
             color: red;
         }
     }
@@ -280,4 +269,3 @@ body {
 .hidden {
     display: none;
 }
-
