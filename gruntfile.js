@@ -1,4 +1,4 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     'use strict';
 
     grunt.initConfig({
@@ -23,7 +23,7 @@ module.exports = function (grunt) {
                 }
             }
         },
-        
+
         csslint: {
             options: {
                 csslintrc: ['.csslint']
@@ -105,7 +105,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('default', ['clean', 'sass', 'uglify', 'copy', 'watch']);
-    grunt.registerTask('build', ['clean', 'sass', 'cssmin', 'uglify', 'concat', 'watch']);
-    
+    grunt.registerTask('default', ['clean', 'sass', 'uglify', 'copy']);
+    grunt.registerTask('build', ['clean', 'sass', 'cssmin', 'uglify', 'copy', 'concat']);
+
 }
