@@ -44,26 +44,10 @@ module.exports = function(grunt) {
         uglify: {
             build: {
                 expand: true,
-                src: ['js/*.js'],
-                dest: 'build',
+                cwd: 'build/js',
+                src: ['*.js'],
+                dest: 'build/js',
                 ext: '.js'
-            }
-        },
-
-        concat: {
-            options: {
-                separator: ';'
-            },
-            css: {
-                src: ['build/css/*.css'],
-                dest: 'build/css/all.css'
-            }
-        },
-
-        watch: {
-            css: {
-                files: ['scss/*.scss'],
-                tasks: ['sass', 'csslint']
             }
         },
 
@@ -92,6 +76,20 @@ module.exports = function(grunt) {
                 src: '*',
                 dest: 'build/music'
             }
+        },
+
+        babel: {
+            options: {
+                sourceMap: false,
+                presets: ['es2015']
+            },
+            build: {
+                files: [{
+                    expand: true,
+                    src: ['js/*.js'],
+                    dest: 'build'
+                }]
+            }
         }
 
     });
@@ -99,13 +97,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-csslint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-babel');
 
-    grunt.registerTask('default', ['clean', 'sass', 'uglify', 'copy']);
-    grunt.registerTask('build', ['clean', 'sass', 'cssmin', 'uglify', 'copy', 'concat']);
+    grunt.registerTask('default', ['clean', 'sass', 'babel', 'copy']);
+    grunt.registerTask('build', ['clean', 'sass', 'cssmin', 'babel', 'uglify', 'copy']);
 
 }
